@@ -3,8 +3,6 @@ import random
 import time
 
 
-
-
 class MAZE:
     
     def __init__(self):
@@ -20,7 +18,7 @@ class MAZE:
         self.ORANGE = (225, 146, 35)
         self.YELLOW = (255 ,255 ,0)
         self.BLACK = (0,0,0)
-        self.BLUE = (63, 0, 255)
+        self.BLUE = (0, 255, 255)
         
         # initialize pygame
         pygame.init()
@@ -147,7 +145,7 @@ class MAZE:
                 time.sleep(.01)                                       
                 self.backtracking_cell(gx, gy)                              
     
-    # function to track back the solution dictionary    
+    #function to track back the solution dictionary    
     def solve_maze(self, gx, gy):
         self.solution_cell(gx, gy)                                        
         while (gx, gy) != (self.w,self.w):                                 
@@ -174,8 +172,6 @@ class MAZE:
             pygame.display.update()
         pygame.quit()
 
-
-
-if __name__ == "__main__":
-    maze = MAZE()
-    maze.game_loop()
+#if __name__ == "__main__":
+maze = MAZE()
+maze.game_loop()
