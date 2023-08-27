@@ -1,6 +1,7 @@
 import pygame
 import random
 import time
+import sys
 
 
 class MAZE:
@@ -171,6 +172,7 @@ class MAZE:
             self.handle_events()
             pygame.display.update()
         pygame.quit()
+        sys.exit()
 
 #if __name__ == "__main__":
 maze = MAZE()
