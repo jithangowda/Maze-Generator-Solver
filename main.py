@@ -16,7 +16,7 @@ class MAZE:
         # initialize colours
         self.WHITE = (255, 255, 255)
         self.GREEN = (191, 228, 93)
-        self.ORANGE = (225, 146, 35)
+        self.PURPLE = (192,136,216)
         self.YELLOW = (255 ,255 ,0)
         self.BLACK = (0,0,0)
         self.BLUE = (0, 255, 255)
@@ -32,7 +32,7 @@ class MAZE:
         # setup maze variables
         self.x = 0                    # x axis
         self.y = 0                    # y axis
-        self.w = 30                   # width of individual cell
+        self.w = 30                  # width of individual cell
         self.n_row = 20               # no. of rows
         self.n_col = 20               # no. of cols
         self.grid = []
@@ -56,22 +56,22 @@ class MAZE:
 
     # stack operations
     def push_up(self, gx, gy):
-        pygame.draw.rect(self.screen, self.ORANGE, (gx + 1, gy - self.w + 1, self.w-1, (self.w*2)-1), 0)        
+        pygame.draw.rect(self.screen, self.BLUE, (gx + 1, gy - self.w + 1, self.w-1, (self.w*2)-1), 0)        
         pygame.display.update()                       
 
 
     def push_down(self,gx, gy):
-        pygame.draw.rect(self.screen, self.ORANGE, (gx +  1, gy + 1, self.w-1, (self.w*2)-1), 0)
+        pygame.draw.rect(self.screen, self.BLUE, (gx +  1, gy + 1, self.w-1, (self.w*2)-1), 0)
         pygame.display.update()
 
 
     def push_left(self,gx, gy):
-        pygame.draw.rect(self.screen, self.ORANGE, (gx - self.w +1, gy +1, (self.w*2)-1, self.w-1), 0)
+        pygame.draw.rect(self.screen, self.BLUE, (gx - self.w +1, gy +1, (self.w*2)-1, self.w-1), 0)
         pygame.display.update()
 
 
     def push_right(self, gx, gy):
-        pygame.draw.rect(self.screen, self.ORANGE, (gx +1, gy +1, (self.w*2)-1, self.w-1), 0)
+        pygame.draw.rect(self.screen, self.BLUE, (gx +1, gy +1, (self.w*2)-1, self.w-1), 0)
         pygame.display.update()
 
 
@@ -82,12 +82,12 @@ class MAZE:
 
 
     def backtracking_cell(self, gx, gy):
-        pygame.draw.rect(self.screen, self.ORANGE, (gx +1, gy +1, self.w-2, self.w-2), 0)     
+        pygame.draw.rect(self.screen, self.BLUE, (gx +1, gy +1, self.w-2, self.w-2), 0)     
         pygame.display.update()                                     
 
     # function to visualize a way back to the beginning
     def solution_cell(self, gx, gy):
-        pygame.draw.rect(self.screen, self.WHITE, (gx+10, gy+10, 7, 7), 0)            
+        pygame.draw.rect(self.screen, self.PURPLE, (gx+10, gy+10, 7, 7), 0)            
         pygame.display.update()                                  
 
     # function to make the maze
